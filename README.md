@@ -7,11 +7,25 @@ Requires Rust 1.25.0: https://rustup.rs/
 $ curl https://sh.rustup.rs -sSf | sh
 ```
 
+Add the cargo path to your `bash.bash_profile`
+
+```bash 
+export PATH="$HOME/.cargo/bin:$PATH"
+```
 Change `NTHREADS` to the number of your processor cores and make sure you compile it in optimized `--release` mode:
 
 ```bash
 $ cargo build --release -j $(nproc)
+```
+Lets download and compile it ...
+
+And now, try to brute force it:
+```bash
 $ ./target/release/lsk-shorty
+```
+or
+```bash
+$ ./target/release/lsk-shorty >> lsk-shortened.txt
 ```
 
 Example output:
